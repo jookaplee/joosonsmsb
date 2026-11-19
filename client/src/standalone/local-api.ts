@@ -94,7 +94,7 @@ export async function createLocalApi(deps: { SQL: SqlJsStatic; store: Store | nu
     anchor = seedDate;
     let failed = 0;
     for (const c of changes) if (apply(c).status >= 400) failed++;
-    if (failed) console.warn(`[afm] ${failed} saved change(s) could not be replayed`);
+    if (failed) console.warn(`[joosonsmsb] ${failed} saved change(s) could not be replayed`);
     journal = [...changes];
   };
 
@@ -117,7 +117,7 @@ export async function createLocalApi(deps: { SQL: SqlJsStatic; store: Store | nu
         staleData = true;
       }
     } catch (err) {
-      console.warn('[afm] could not read saved changes; continuing without saving', err);
+      console.warn('[joosonsmsb] could not read saved changes; continuing without saving', err);
       mode = 'memory';
       changes = [];
     }
@@ -254,7 +254,7 @@ function api() {
       try {
         base = crmBase(embedded);
       } catch (e) {
-        console.warn('[afm] embedded dataset could not be read; using demo data', e);
+        console.warn('[joosonsmsb] embedded dataset could not be read; using demo data', e);
       }
     }
     return createLocalApi({ SQL, store, base });

@@ -7,6 +7,7 @@ COPY package.json package-lock.json ./
 RUN npm ci
 COPY . .
 RUN npm run build
+# "afm" in DB_PATH is the project's old name, kept so existing volumes keep working.
 ENV NODE_ENV=production \
     PORT=3001 \
     DB_PATH=/data/afm.db \

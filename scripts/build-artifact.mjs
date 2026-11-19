@@ -1,5 +1,5 @@
 // Turns the standalone build into self-contained HTML (CSS and JS inlined):
-//  - dist-standalone/afm-dashboard.html  page content for a claude.ai Artifact
+//  - dist-standalone/joosonsmsb-dashboard.html  page content for a claude.ai Artifact
 //    (the Artifact host wraps it in its own <html>/<head>/<body>)
 //  - dist-standalone/site/index.html     a complete page for any static host,
 //    e.g. GitHub Pages (see .github/workflows/pages.yml)
@@ -61,7 +61,7 @@ const artifact = `<title>Papan Pemuka JOOSONS</title>
 <div id="root"></div>
 ${datasetTag}<script type="module">${script}</script>
 `;
-writeFileSync(join(dir, 'afm-dashboard.html'), artifact);
+writeFileSync(join(dir, 'joosonsmsb-dashboard.html'), artifact);
 
 const site = `<!doctype html>
 <html lang="ms">
@@ -86,4 +86,4 @@ writeFileSync(join(dir, 'site', 'index.html'), site);
 writeFileSync(join(dir, 'site', '.nojekyll'), '');
 
 const mb = (s) => (s.length / 1024 / 1024).toFixed(2);
-console.log(`Wrote ${join(dir, 'afm-dashboard.html')} (${mb(artifact)} MB) and ${join(dir, 'site', 'index.html')} (${mb(site)} MB)`);
+console.log(`Wrote ${join(dir, 'joosonsmsb-dashboard.html')} (${mb(artifact)} MB) and ${join(dir, 'site', 'index.html')} (${mb(site)} MB)`);

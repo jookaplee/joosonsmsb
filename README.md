@@ -199,7 +199,9 @@ dicuba semula pada model lain secara automatik (Opus/Sonnet sahaja).
 ## Cara menjalankan
 
 Prasyarat: **Node.js 22.18+** (atau 24+). Tiada pangkalan data luaran — data disimpan dalam SQLite
-terbina dalam Node (`node:sqlite`) di `data/afm.db`.
+terbina dalam Node (`node:sqlite`) di `data/afm.db`. Nama lama "afm" sengaja dikekalkan untuk fail
+pangkalan data ini dan kunci tetapan pelayar (`afm.lang`, `afm.theme`) demi keserasian — menukarnya
+akan memutuskan data dan tetapan yang sedia ada.
 
 ```bash
 npm install
@@ -255,7 +257,7 @@ Arahan lain: `npm test` (ujian API), `npm run typecheck`.
 ### Versi kendiri (tanpa pelayan) — untuk dibuka terus dalam pelayar
 
 ```bash
-npm run build:standalone   # → dist-standalone/afm-dashboard.html (satu fail, ±2 MB)
+npm run build:standalone   # → dist-standalone/joosonsmsb-dashboard.html (satu fail, ±2 MB)
 # dengan senarai prospek dibenamkan (bukan data demo):
 DATASET=data/import/crm-dataset.json npm run build:standalone
 ```
@@ -281,7 +283,7 @@ Butiran: `client/src/standalone/persistence.ts` dan `local-api.ts`.
 
 Aliran kerja `.github/workflows/pages.yml` berjalan pada setiap push ke `main` dan ke branch kerja:
 ia menjalankan ujian, membina versi kendiri dan menerbitkannya ke branch `gh-pages`. Versi terkini
-sentiasa berada di **https://jookaplee.github.io/afm/** dan boleh dibuka terus dalam Safari (atau
+sentiasa berada di **https://jookaplee.github.io/joosonsmsb/** dan boleh dibuka terus dalam Safari (atau
 pelayar lain) tanpa log masuk. Di sana perubahan disimpan dalam pelayar itu sendiri (localStorage),
 jadi ia kekal selepas muat semula pada peranti yang sama.
 
